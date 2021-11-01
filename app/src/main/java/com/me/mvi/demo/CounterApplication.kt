@@ -2,7 +2,7 @@ package com.me.mvi.demo
 
 import android.app.Application
 import com.airbnb.mvrx.Mavericks
-import com.airbnb.mvrx.sample.network.DadJokeService
+import com.me.mvi.demo.net.DadJokeService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import org.koin.android.ext.koin.androidContext

@@ -7,16 +7,21 @@ import androidx.fragment.app.Fragment
 import com.airbnb.mvrx.*
 import com.me.mvi.demo.databinding.CounterFragmentBinding
 import com.me.mvi.demo.vm.CounterViewModel
-import com.yunzhu.frame.extensions.viewBinding
+import com.yunzhu.frame.base.BaseBindingFragment
 
 data class CounterState(@PersistState val count: Int = 0) : MavericksState
 
-class CounterFragment : Fragment(R.layout.counter_fragment), MavericksView {
+class CounterFragment : BaseBindingFragment<CounterFragmentBinding>(),
+    MavericksView {
 
-    private val binding: CounterFragmentBinding by viewBinding()
+//    private val binding: CounterFragmentBinding by viewBinding()
     private val viewModel: CounterViewModel by activityViewModel()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+    override fun invalidate() = withState(viewModel) { state ->
+        binding.counterText.text = "${state.count}"
+    }
+
+    override fun setListener() {
         binding.counterText.setOnClickListener {
             viewModel.incrementCount()
         }
@@ -28,12 +33,10 @@ class CounterFragment : Fragment(R.layout.counter_fragment), MavericksView {
         binding.btn2.setOnClickListener {
             startActivity(Intent(requireContext(),ThirdActivity::class.java))
         }
-
-
     }
 
-    override fun invalidate() = withState(viewModel) { state ->
-        binding.counterText.text = "${state.count}"
+    override fun initView() {
+
     }
 
 }

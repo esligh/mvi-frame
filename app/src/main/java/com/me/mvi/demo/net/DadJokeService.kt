@@ -1,4 +1,4 @@
-package com.airbnb.mvrx.sample.network
+package com.me.mvi.demo.net
 
 import com.me.mvi.demo.models.Joke
 import com.me.mvi.demo.models.JokesResponse

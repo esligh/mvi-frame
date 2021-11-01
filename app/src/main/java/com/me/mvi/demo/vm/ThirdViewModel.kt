@@ -3,7 +3,7 @@ package com.me.mvi.demo.vm
 import android.util.Log
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.airbnb.mvrx.ViewModelContext
-import com.airbnb.mvrx.sample.network.DadJokeService
+import com.me.mvi.demo.net.DadJokeService
 import com.me.mvi.demo.ThirdState
 import com.yunzhu.frame.base.BaseViewModel
 import kotlinx.coroutines.Dispatchers
@@ -11,7 +11,8 @@ import org.koin.android.ext.android.inject
 import kotlin.random.Random
 
 class ThirdViewModel(state: ThirdState,
-                     private val dadJokeService: DadJokeService) : com.yunzhu.frame.base.BaseViewModel<ThirdState>(state) {
+                     private val dadJokeService: DadJokeService
+) : BaseViewModel<ThirdState>(state) {
 
     fun incrementCount() = setState { copy(count = count + 1) }
 

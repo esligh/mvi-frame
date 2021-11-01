@@ -20,7 +20,3 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keepclassmembers class * implements androidx.viewbinding.ViewBinding {
-    public static ** bind(***);
-    public static ** inflate(***);
-}

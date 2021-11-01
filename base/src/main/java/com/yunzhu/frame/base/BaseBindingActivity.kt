@@ -8,7 +8,6 @@ import com.yunzhu.frame.utils.inflateBindingWithGeneric
 
 /**
  * base binding activity
- *
  * */
 abstract class BaseBindingActivity<VB : ViewBinding> :AppCompatActivity(), MavericksView {
 
@@ -18,12 +17,11 @@ abstract class BaseBindingActivity<VB : ViewBinding> :AppCompatActivity(), Maver
         super.onCreate(savedInstanceState)
         binding = inflateBindingWithGeneric(layoutInflater)
         setContentView(binding.root)
-
         setListener()
-        initView()
+        init()
     }
 
-    open fun initView(){}
+    open fun init(){}
 
     abstract fun setListener()
 

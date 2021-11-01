@@ -16,10 +16,11 @@ abstract class BaseBindingDialog<VB : ViewBinding>(context: Context, themeResId:
       super.onCreate(savedInstanceState)
       binding = inflateBindingWithGeneric(layoutInflater)
       setContentView(binding.root)
-      initView()
+      setListener()
+      init()
   }
 
-  abstract fun initView()
+  abstract fun init()
 
   abstract fun setListener()
 

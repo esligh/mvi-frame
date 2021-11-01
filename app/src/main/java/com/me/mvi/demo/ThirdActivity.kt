@@ -11,7 +11,7 @@ data class ThirdState(@PersistState val count: Int = 0,
                       val name: Async<String> = Uninitialized,
                       val joke: Async<Joke> = Uninitialized) : MavericksState
 
-class ThirdActivity : com.yunzhu.frame.base.BaseBindingActivity<ActivityThirdBinding>() {
+class ThirdActivity : BaseBindingActivity<ActivityThirdBinding>() {
 
     private val viewModel: ThirdViewModel by viewModel()
 
