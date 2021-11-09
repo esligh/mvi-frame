@@ -1,3 +1,6 @@
+include ':mine'
+include ':project'
+include ':home'
 include ':base'
 include ':app'
 rootProject.name = "mvi-frame"

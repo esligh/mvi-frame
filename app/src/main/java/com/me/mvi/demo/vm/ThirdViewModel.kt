@@ -48,7 +48,6 @@ class ThirdViewModel(state: ThirdState,
      */
     companion object : MavericksViewModelFactory<ThirdViewModel, ThirdState> {
 
-
         override fun create(viewModelContext: ViewModelContext, state: ThirdState): ThirdViewModel {
             val service: DadJokeService by viewModelContext.activity.inject()
             return ThirdViewModel(state, service)

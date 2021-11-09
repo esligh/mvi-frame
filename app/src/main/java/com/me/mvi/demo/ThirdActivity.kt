@@ -47,6 +47,9 @@ class ThirdActivity : BaseBindingActivity<ActivityThirdBinding>() {
 
     }
 
+    override fun init() {
+
+    }
 
 
 }

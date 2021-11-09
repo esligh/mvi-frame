@@ -12,14 +12,14 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-class CounterApplication : Application() {
+class MyApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
         Mavericks.initialize(this)
 
         startKoin {
-            androidContext(this@CounterApplication)
+            androidContext(this@MyApplication)
             modules(dadJokeServiceModule)
         }
 
