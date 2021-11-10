@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/home/mvi-frame.home.iml" filepath="$PROJECT_DIR$/.idea/modules/home/mvi-frame.home.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mine/mvi-frame.mine.iml" filepath="$PROJECT_DIR$/.idea/modules/mine/mvi-frame.mine.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/project/mvi-frame.project.iml" filepath="$PROJECT_DIR$/.idea/modules/project/mvi-frame.project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/repo/mvi-frame.repo.iml" filepath="$PROJECT_DIR$/.idea/modules/repo/mvi-frame.repo.iml" />
     </modules>
   </component>
 </project>

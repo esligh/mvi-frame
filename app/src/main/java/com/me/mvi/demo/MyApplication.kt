@@ -2,6 +2,7 @@ package com.me.mvi.demo
 
 import android.app.Application
 import com.airbnb.mvrx.Mavericks
+import com.me.home.di.moduleHome
 import com.me.mvi.demo.net.DadJokeService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -13,17 +14,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 class MyApplication : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-        Mavericks.initialize(this)
-
-        startKoin {
-            androidContext(this@MyApplication)
-            modules(dadJokeServiceModule)
-        }
-
-    }
 
     private val dadJokeServiceModule = module {
         factory {
@@ -43,6 +33,21 @@ class MyApplication : Application() {
         single {
             get<Retrofit>().create(DadJokeService::class.java)
         }
+    }
+
+    private val modules = arrayListOf(
+        moduleHome, dadJokeServiceModule
+    )
+
+    override fun onCreate() {
+        super.onCreate()
+        Mavericks.initialize(this)
+
+        startKoin {
+            androidContext(this@MyApplication)
+            modules(modules)
+        }
+
     }
 
 }

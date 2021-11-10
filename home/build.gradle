@@ -7,5 +7,12 @@ apply from:'../dependencies.gradle'
 
 dependencies {
 
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    //banner
+    implementation 'com.youth.banner:banner:2.1.0'
 
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation project(path: ':base')
+    implementation project(path: ':repo')
 }

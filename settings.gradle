@@ -1,3 +1,4 @@
+include ':repo'
 include ':mine'
 include ':project'
 include ':home'

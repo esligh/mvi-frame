@@ -28,7 +28,7 @@ abstract class BaseBindingFragment<VB:ViewBinding> : Fragment(), MavericksView
         return binding.root
     }
 
-    open fun initView(){}
+    abstract fun initView()
 
     abstract fun setListener()
 
