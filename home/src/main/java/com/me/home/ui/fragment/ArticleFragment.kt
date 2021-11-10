@@ -6,6 +6,7 @@ import androidx.paging.ExperimentalPagingApi
 import com.airbnb.mvrx.MavericksState
 import com.airbnb.mvrx.PersistState
 import com.airbnb.mvrx.activityViewModel
+import com.airbnb.mvrx.withState
 import com.me.home.databinding.FragmentArticleBinding
 import com.me.home.ui.adapter.ArticleMultiPagingAdapter
 import com.me.home.vm.ArticleViewModel
@@ -38,7 +39,6 @@ class ArticleFragment : BaseBindingFragment<FragmentArticleBinding>() {
             }
         })
 
-
         lifecycleScope.launchWhenCreated {
             mViewModel.articlePagingFlow().collectLatest { data ->
                 mArticlePagingAdapter.submitData(data)
@@ -50,7 +50,7 @@ class ArticleFragment : BaseBindingFragment<FragmentArticleBinding>() {
 
     }
 
-    override fun invalidate() {
+    override fun invalidate() = withState(mViewModel) { state ->
 
     }
 

@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.MineFragment">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/iv_user_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:src="@mipmap/icon_defult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Mine" />
+        android:id="@+id/tv_name_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18sp"
+        android:text="去登录"
+        android:textColor="@color/color_405182"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_icon" />
 
-</FrameLayout>
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/color_F1F3F9"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_user" />
+
+    <TextView
+        android:id="@+id/setting_item_my_collect"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@android:color/white"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        android:text="我的收藏" />
+
+    <TextView
+        android:id="@+id/setting_item_coin"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/setting_item_my_collect"
+        android:text="积分排行榜" />
+
+    <TextView
+        android:id="@+id/setting_item_tool"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/setting_item_coin"
+        android:text="常用工具" />
+
+    <TextView
+        android:id="@+id/setting_item_about"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/setting_item_tool"
+        android:text="关于" />
+
+
+    <TextView
+        android:id="@+id/tv_logout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/setting_item_about"
+        android:text="退出登录" />
+</androidx.constraintlayout.widget.ConstraintLayout>
