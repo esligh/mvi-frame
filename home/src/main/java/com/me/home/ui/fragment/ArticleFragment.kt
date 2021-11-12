@@ -9,7 +9,7 @@ import com.airbnb.mvrx.activityViewModel
 import com.airbnb.mvrx.withState
 import com.me.home.databinding.FragmentArticleBinding
 import com.me.home.ui.adapter.ArticleMultiPagingAdapter
-import com.me.home.vm.ArticleViewModel
+import com.me.home.vm.HomeViewModel
 import com.yunzhu.frame.base.BaseBindingFragment
 import com.yunzhu.frame.widget.FooterAdapter
 import kotlinx.coroutines.flow.collectLatest
@@ -18,7 +18,7 @@ data class ArticleState(@PersistState val count: Int = 0) : MavericksState
 
 class ArticleFragment : BaseBindingFragment<FragmentArticleBinding>() {
 
-    private val mViewModel: ArticleViewModel by activityViewModel()
+    private val mViewModel: HomeViewModel by activityViewModel()
     private var mArticlePagingAdapter = ArticleMultiPagingAdapter()
 
     @ExperimentalPagingApi
@@ -47,10 +47,6 @@ class ArticleFragment : BaseBindingFragment<FragmentArticleBinding>() {
     }
 
     override fun setListener() {
-
-    }
-
-    override fun invalidate() = withState(mViewModel) { state ->
 
     }
 

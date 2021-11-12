@@ -1,60 +1,36 @@
 package com.me.project.ui
+import com.me.mvi.demo.views.MarqueeModel_
+import com.me.mvi.demo.views.marquee
+import com.me.project.databinding.FragmentProjectBinding
+import com.me.project.views.basicRow
+import com.yunzhu.frame.base.BaseBindingFragment
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import com.me.project.R
+class ProjectFragment : BaseBindingFragment<FragmentProjectBinding>() {
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+    override fun initView() {
+        binding.recyclerView.withModels {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ProjectFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ProjectFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+            marquee {
+                id("marquee")
+                title("Intro")
+                subtitle("Set the initial counter value")
+            }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            arrayOf(0, 10, 50, 100, 1_000, 10_000).forEach { count ->
+                basicRow {
+                    id(count)
+                    title("$count")
+                    subtitle("a:$count")
+                    clickListener { _ ->
+
+                    }
+                }
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_project, container, false)
+    override fun setListener() {
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProjectFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProjectFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

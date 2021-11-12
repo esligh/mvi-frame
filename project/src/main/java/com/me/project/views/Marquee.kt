@@ -3,27 +3,31 @@ package com.me.mvi.demo.views
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.LinearLayout
+import androidx.core.content.withStyledAttributes
 import androidx.core.view.isVisible
-import com.airbnb.epoxy.CallbackProp
 import com.airbnb.epoxy.ModelView
 import com.airbnb.epoxy.TextProp
-import com.me.mvi.demo.databinding.BasicRowBinding
+import com.me.project.R
+import com.me.project.databinding.MarqueeBinding
 import com.yunzhu.frame.extensions.viewBinding
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
-class BasicRow @JvmOverloads constructor(
+class Marquee @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr) {
-    private val binding: BasicRowBinding by viewBinding()
+    private val binding: MarqueeBinding by viewBinding()
 
     init {
         orientation = VERTICAL
+        context.withStyledAttributes(attrs, R.styleable.Marquee) {
+            if (hasValue(R.styleable.Marquee_android_title)) setTitle(getText(R.styleable.Marquee_android_title))
+        }
     }
 
     @TextProp
-    fun setTitle(title: CharSequence?) {
+    fun setTitle(title: CharSequence) {
         binding.title.text = title
     }
 
@@ -31,10 +35,5 @@ class BasicRow @JvmOverloads constructor(
     fun setSubtitle(subtitle: CharSequence?) {
         binding.subtitle.isVisible = subtitle.isNullOrBlank().not()
         binding.subtitle.text = subtitle
-    }
-
-    @CallbackProp
-    fun setClickListener(clickListener: OnClickListener?) {
-        setOnClickListener(clickListener)
     }
 }

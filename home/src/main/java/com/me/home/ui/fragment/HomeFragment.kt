@@ -28,10 +28,4 @@ class HomeFragment : BaseBindingFragment<FragmentHomeBinding>() {
 
     }
 
-    override fun invalidate() {
-
-    }
-
-
-
 }

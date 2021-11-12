@@ -1,10 +1,10 @@
-package com.me.mvi.demo.views
+package com.me.project.views
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
 import com.airbnb.epoxy.ModelView
-import com.me.mvi.demo.R
+import com.me.project.R
 
 @ModelView(autoLayout = ModelView.Size.MATCH_WIDTH_WRAP_HEIGHT)
 class LoadingRow @JvmOverloads constructor(

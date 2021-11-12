@@ -23,6 +23,7 @@ abstract class BaseBindingFragment<VB:ViewBinding> : Fragment(), MavericksView
         savedInstanceState: Bundle?
     ): View? {
         _binding = inflateBindingWithGeneric(layoutInflater, container, false)
+        mLoadingDialog = LoadingDialog(requireContext(),true)
         setListener()
         initView()
         return binding.root
@@ -31,6 +32,10 @@ abstract class BaseBindingFragment<VB:ViewBinding> : Fragment(), MavericksView
     abstract fun initView()
 
     abstract fun setListener()
+
+    override fun invalidate() {
+
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

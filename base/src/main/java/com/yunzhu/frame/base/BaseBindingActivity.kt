@@ -19,6 +19,7 @@ abstract class BaseBindingActivity<VB : ViewBinding> :AppCompatActivity(), Maver
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = inflateBindingWithGeneric(layoutInflater)
+        mLoadingDialog = LoadingDialog(this,true)
         setContentView(binding.root)
         setListener()
         init()
@@ -30,7 +31,7 @@ abstract class BaseBindingActivity<VB : ViewBinding> :AppCompatActivity(), Maver
 
     override fun invalidate() {}
 
-    /**
+    /**d
      * show loading dialog
      */
     fun showLoading() {

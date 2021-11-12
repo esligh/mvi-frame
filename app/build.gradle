@@ -7,17 +7,9 @@ apply from:'../dependencies.gradle'
 
 dependencies {
 
-    implementation 'com.airbnb.android:mavericks:2.4.0'
     implementation project(path: ':base')
     implementation project(path: ':home')
     implementation project(path: ':project')
     implementation project(path: ':mine')
-
-    implementation ("com.airbnb.android:epoxy:4.0.0") {
-                exclude group: "com.android.support"
-    }
-    kapt 'com.airbnb.android:epoxy-processor:4.0.0'
-
-
 
 }

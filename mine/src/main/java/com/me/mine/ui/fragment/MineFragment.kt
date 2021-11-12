@@ -36,7 +36,9 @@ class MineFragment :BaseBindingFragment<FragmentMineBinding>() {
 
         mViewModel.onEach {
             if(it.isLogin is Loading){
-                Toast.makeText(requireContext(),"waiting...", Toast.LENGTH_SHORT).show()
+                showLoading()
+            }else{
+                dismissLoading()
             }
         }
     }

@@ -22,7 +22,8 @@
         android:paddingLeft="@dimen/padding_horizontal"
         android:paddingRight="@dimen/padding_horizontal"
         android:paddingTop="4dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:text="set the value"/>
 
     <Space
         android:layout_width="0dp"

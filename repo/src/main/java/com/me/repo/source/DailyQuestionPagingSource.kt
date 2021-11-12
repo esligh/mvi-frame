@@ -15,7 +15,6 @@ class DailyQuestionPagingSource(private val service: HomeService) : PagingSource
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, DailyQuestionData> {
         return try {
             val pageNum = params.key ?: 1
-            Log.d("sss","page size="+params.loadSize)
             val data = service.getDailyQuestion(pageNum)
             val preKey = if (pageNum > 1) pageNum - 1 else null
             LoadResult.Page(data.data?.datas!!, prevKey = preKey, nextKey = pageNum + 1)

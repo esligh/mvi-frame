@@ -1,11 +1,17 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 apply from:'../dependencies.gradle'
 
 dependencies {
-
+    implementation ("com.airbnb.android:epoxy:4.0.0") {
+        exclude group: "com.android.support"
+    }
+    implementation project(path: ':base')
+    implementation project(path: ':repo')
+    kapt 'com.airbnb.android:epoxy-processor:4.0.0'
 
 }
