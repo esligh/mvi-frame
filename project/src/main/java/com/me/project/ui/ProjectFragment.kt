@@ -1,8 +1,7 @@
 package com.me.project.ui
-import com.me.mvi.demo.views.MarqueeModel_
-import com.me.mvi.demo.views.marquee
 import com.me.project.databinding.FragmentProjectBinding
 import com.me.project.views.basicRow
+import com.me.project.views.marquee
 import com.yunzhu.frame.base.BaseBindingFragment
 
 class ProjectFragment : BaseBindingFragment<FragmentProjectBinding>() {

@@ -10,8 +10,13 @@ dependencies {
     implementation ("com.airbnb.android:epoxy:4.0.0") {
         exclude group: "com.android.support"
     }
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation project(path: ':base')
     implementation project(path: ':repo')
     kapt 'com.airbnb.android:epoxy-processor:4.0.0'
 
+    def PARIS_VERSION = "1.7.3"
+    implementation "com.airbnb.android:paris:$PARIS_VERSION"
+    kapt "com.airbnb.android:paris-processor:$PARIS_VERSION"
 }

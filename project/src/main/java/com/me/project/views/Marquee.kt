@@ -1,4 +1,4 @@
-package com.me.mvi.demo.views
+package com.me.project.views
 
 import android.content.Context
 import android.util.AttributeSet

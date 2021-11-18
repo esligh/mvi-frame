@@ -36,7 +36,7 @@
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="@dimen/divider"
+        android:layout_height="1dp"
         android:layout_marginLeft="@dimen/padding_horizontal"
         android:layout_marginRight="@dimen/padding_horizontal"
         android:background="#999999" />
